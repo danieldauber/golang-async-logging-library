@@ -53,7 +53,6 @@ loop:
 		case msg := <-al.msgCh:
 			w.Add(1)
 			go al.write(msg, w)
-			w.Done()
 
 		case <-al.shutdownCh:
 			w.Wait()
